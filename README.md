@@ -6,7 +6,7 @@ This is a course project of a CS Community Web Application developed using MERN 
 
 > **Development Team**
 * [Omar Tarek](https://github.com/Omar-TK) (*Team Leader*)
-* [Abdallah Ayman]()
-* [Salma Tamer]()
-* [Seif Tobgy]()
-* [Omar Magdy]()
+* [Abdallah Ayman](https://github.com/abdallahayman77)
+* [Salma Tamer](https://github.com/SalmaTamer)
+* [Seif Tobgy](https://github.com/)
+* [Omar Magdy](https://github.com/)
