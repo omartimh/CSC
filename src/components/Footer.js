@@ -1,7 +1,15 @@
+import { Link } from 'react-router-dom'; 
+
 const Footer = () => {
     return (
         <footer>
-            Copyright &copy; 2021 MSA.
+            <p style={{textAlign: "right"}}>Copyright &copy; 2021 MSA University.</p>
+            <br/><hr/><br/>
+            <span>
+                <Link to="/about">About</Link>
+                <Link to="/contact">Contact</Link>
+                <Link to="/help">Help</Link>
+            </span>
         </footer>
     )
 }

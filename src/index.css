@@ -38,11 +38,25 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 200px;
   height: 50px;
   font-size: 30px;
   font-weight: 600;
-  /* background-color: coral; */
+} .title a {
+  outline: none;
+  box-sizing: none;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  transition: all 0.5s;
+} .title a:hover {
+  background-color: #111;
+} .title a img {
+  width: 70%;
+  height: 95%;
+  margin: auto;
+  margin-top: 1px;
 }
 
 nav {
@@ -67,6 +81,7 @@ nav {
 }
 
 .search {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +90,29 @@ nav {
   margin-right: 25px;
   font-size: 20px;
   /* background-color: brown; */
+} .search input {
+  outline: none;
+  box-sizing: none;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 15px;
+  height: 50px;
+  font-size: 18px;
+} .search input:focus {
+  box-shadow: 0px 0px 5px #1976D2;
+} .search button {
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  outline: none;
+  box-sizing: none;
+  border: none;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .user {
@@ -126,12 +164,18 @@ nav {
 }
 
 footer {
-  width: auto;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top: 1px solid #c1c1c1;
+  padding: 50px;
+  width: 80%;
+  margin: auto;
+} footer a {
+  color: #555;
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 25px;
+} footer a:hover {
+  color: #1976D2;
 }
 
 .btn {
@@ -192,9 +236,6 @@ footer {
   justify-content: space-between;
   margin: auto;
   width: 80%;
-} .login form p {
-  color: #b71c1c;
-  font-size: 12px;
 } .login form label {
   display: inline-block;
   margin-top: 5px;
@@ -213,9 +254,68 @@ footer {
 } .login form input:focus {
   box-shadow: 0 8px 12px 2px #1976d23f;
 } .login form .forgotpassword {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  color: #b71c1c;
+  text-decoration: none;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vmax;
+  height: 100vmin;
+  background-color: #eee;
+} .signup form {
+  padding: 15px;
+  width: 450px;
+  height: 500px;
+  border-radius: 7px;
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+} .signup form h3 {
   display: flex;
   justify-content: center;
-  margin-top: 35px;
+  padding-bottom: 15px;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 23px;
+} .signup form div {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+} .signup form div label {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 25px;
+} .signup form div input {
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 15px;
+  padding: 15px;
+  width: 300px;
+  height: 35px;
+  margin-left: 5px;
+  cursor: pointer;
+  background-color: #eee;
+} .signup form input:focus {
+  box-shadow: 0 8px 12px 2px #1976d23f;
+}
+
+.login-signup {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+} .login-signup a {
   text-decoration: none;
-  color: #039BE5;
+  color: #1976D2;
 }
