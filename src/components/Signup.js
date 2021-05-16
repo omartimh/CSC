@@ -2,8 +2,14 @@ import { Link } from 'react-router-dom'
 import { FiUser } from 'react-icons/fi'
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsLockFill } from 'react-icons/bs'
+import Button from './Button'
 
 const Signup = () => {
+    
+    const signup = () => {
+          console.log("Sign up")  
+    }
+    
     return (
         <div className="signup">
             <form>
@@ -30,7 +36,7 @@ const Signup = () => {
                 </div>
                 <br/>
                 <div>
-                    <button className="btn btn-success" type="submit" style={{width: "100%"}}>Sign up</button>
+                    <Button className="btn btn-success" text="Sign up" style={{width: "100%"}} onClick={signup}/>
                 </div>
                 <p className="login-signup" style={{marginTop: "25px"}}>Already a member?<Link to="/login" style={{marginLeft: "5px"}}>Login</Link></p>
             </form>
