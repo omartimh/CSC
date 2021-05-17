@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Post from './Post'
 import Button from './Button'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const Blog = () => {
 
@@ -12,22 +13,22 @@ const Blog = () => {
         {
             id: 1,
             author: "John Doe",
-            title: "first post", 
-            body: "this is my first post !",
+            title: "First post", 
+            body: "This is my first post !",
             date: "1 hour ago"
         },
         {
             id: 2,
             author: "John Doe",
-            title: "second post", 
-            body: "this is my second post !!",
+            title: "Second post", 
+            body: "This is my second post !!",
             date: "3 days ago"
         },
         {
             id: 3,
             author: "John Doe",
-            title: "third post", 
-            body: "this is my third post !!!",
+            title: "Third post", 
+            body: "This is my third post !!!",
             date: "5 hours ago"
         }
     ])
@@ -40,8 +41,17 @@ const Blog = () => {
                     <Button text="Post" className="btn btn-primary" onClick={post}/>
                 </div>
             </form>
+            <div className="sort">
+                <h3 style={{color: "#333"}}>All Posts</h3>
+                <ul>
+                    <li><Button text="Newest"/></li>
+                    <li><Button text="Popular"/></li>
+                    <li><Button text="Trending"/></li>
+                    <li><Button text="Oldest"/></li>
+                    <li><Button text="More" icon={<IoIosArrowDown style={{position: "relative", top: "3px"}}/>}/></li>
+                </ul>
+            </div>
             <div className="posts">
-                {/* <h2 style={{textAlign: "center", fontWeight: "500", color: "#333"}}>Most Recent Posts</h2> */}
                 {posts.map((post) => (
                     <Post key={post.id} post={post}/>
                 ))}
