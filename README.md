@@ -9,4 +9,4 @@ This is a course project of a CS Community Web Application developed using MERN 
 * [Abdallah Ayman](https://github.com/abdallahayman77)
 * [Salma Tamer](https://github.com/SalmaTamer)
 * [Seif Tobgy](https://github.com/seifeltobgy)
-* [Omar Magdy](https://github.com/)
+* [Omar Magdy](https://github.com/Omar911465)
