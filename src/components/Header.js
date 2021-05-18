@@ -20,8 +20,8 @@ const Header = () => {
             <div className="title"><Link to="/"><img src="logo.png" alt="CSC" /></Link></div>
             <nav>
                 <ul>
-                    <li><Link to="#">Courses</Link></li>
-                    <li><Link to="#">Jobs</Link></li>
+                    <li><Link to="/courses">Courses</Link></li>
+                    <li><Link to="/jobs">Jobs</Link></li>
                     <li><Link to="#">News</Link></li>
                     <li><Link to="/blog" id="btn-blog" className="btn btn-default" style={{display: "inline", width: "70px", padding: "3px 15px"}}>Blog</Link></li>
                 </ul>

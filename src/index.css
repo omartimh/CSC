@@ -247,7 +247,7 @@ footer {
   cursor: pointer;
   background-color: #eee;
 } .login form input:focus {
-  box-shadow: 0 8px 12px 2px #1976d23f;
+  box-shadow: 0px 0px 7px 3px #1976d23f;
 } .login form .forgotpassword {
   width: 80%;
   margin: auto;
@@ -303,7 +303,7 @@ footer {
   cursor: pointer;
   background-color: #eee;
 } .signup form input:focus {
-  box-shadow: 0 8px 12px 2px #1976d23f;
+  box-shadow: 0px 0px 7px 3px #1976d23f;
 }
 
 .login-signup {
@@ -316,7 +316,7 @@ footer {
 }
 
 .home {
-
+  
 }
 
 .blog {
@@ -420,4 +420,12 @@ footer {
   cursor: pointer;
 }  .blog .sort ul li button:hover {
   background-color: #F5F5F5;
+}
+
+.courses {
+
+}
+
+.jobs {
+
 }

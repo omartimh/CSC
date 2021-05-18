@@ -12,13 +12,14 @@ import Help from './components/Help'
 import Profile from './components/Profile'
 import Settings from './components/Settings'
 import Blog from './components/Blog'
+import Courses from './components/Courses'
+import Jobs from './components/Jobs'
 
 function App() {
   return (
     <Router>
       <ScrollToTop>
         <div className="container">
-
           {/* Login */}
           <Route path="/login" component={Login}/>
 
@@ -97,6 +98,28 @@ function App() {
               <Header/>
               <div className="content">
                 <Blog/>
+              </div>
+              <Footer/>
+            </>
+          )}/>
+
+          {/* Courses */}
+          <Route path="/courses" exact render={(props) => (
+            <>
+              <Header/>
+              <div className="content">
+                <Courses/>
+              </div>
+              <Footer/>
+            </>
+          )}/>
+
+          {/* Jobs */}
+          <Route path="/jobs" exact render={(props) => (
+            <>
+              <Header/>
+              <div className="content">
+                <Jobs/>
               </div>
               <Footer/>
             </>

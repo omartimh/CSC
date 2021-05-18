@@ -14,21 +14,21 @@ const Blog = () => {
             id: 1,
             author: "John Doe",
             title: "First post", 
-            body: "This is my first post !",
+            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, amet labore doloremque id consequatur.",
             date: "1 hour ago"
         },
         {
             id: 2,
             author: "John Doe",
             title: "Second post", 
-            body: "This is my second post !!",
+            body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur repellat odit consequuntur? Voluptate mollitia, distinctio ipsam veritatis minus culpa quisquam.",
             date: "3 days ago"
         },
         {
             id: 3,
             author: "John Doe",
             title: "Third post", 
-            body: "This is my third post !!!",
+            body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, nesciunt dignissimos, consequatur sequi rerum officia corrupti eos excepturi, et culpa maiores saepe quos non! Nesciunt, velit? Ex suscipit enim commodi expedita incidunt corporis excepturi voluptas eos architecto laboriosam? Aut adipisci ullam harum at minus est nisi doloremque illo eos aperiam.",
             date: "5 hours ago"
         }
     ])
