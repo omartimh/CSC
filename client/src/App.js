@@ -1,23 +1,31 @@
-import React from 'react'
-// import { Container, AppBar, Typography, Grow, Grid } from '@material-ui/core'
-// import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import ScrollToTop from 'react-router-scroll-top'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Login from './components/Login'
-import Signup from './components/Signup'
-import Home from './components/Home'
-import About from './components/About'
-import Contact from './components/Contact'
-import Help from './components/Help'
-import Profile from './components/Profile'
-import Settings from './components/Settings'
-import Blog from './components/Blog'
-import Courses from './components/Courses'
-import Jobs from './components/Jobs'
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ScrollToTop from 'react-router-scroll-top';
+import { useDispatch } from 'react-reudx';
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import Signup from './components/Signup';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Help from './components/Help';
+import Profile from './components/Profile';
+import Settings from './components/Settings';
+import Blog from './components/Blog';
+import Courses from './components/Courses';
+import Jobs from './components/Jobs';
+
+import { getPosts } from './actions/posts';
 
 function App() {
+  const dsipatch = useDispatch();
+
+  useEffect(() => {
+    dsipatch(getPosts());
+  }, [dsipatch]);
+
   return (
     <Router>
       <ScrollToTop>

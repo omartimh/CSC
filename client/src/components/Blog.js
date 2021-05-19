@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import Post from './Post'
-import Button from './Button'
-import { IoIosArrowDown } from 'react-icons/io'
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import Post from './Post';
+import Button from './Button';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const Blog = () => {
+
+    const posts = useSelector((state) => state.posts);
+    console.log(posts);
 
     const post = () => {
         console.log("Post")
     }
 
-    const [posts, setPost] = useState([
+    const [allPosts, setPost] = useState([
         {
             id: 1,
             author: "John Doe",
@@ -52,7 +56,7 @@ const Blog = () => {
                 </ul>
             </div>
             <div className="posts">
-                {posts.map((post) => (
+                {allPosts.map((post) => (
                     <Post key={post.id} post={post}/>
                 ))}
             </div>
