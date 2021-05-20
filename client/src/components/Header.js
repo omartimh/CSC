@@ -6,6 +6,8 @@ import { BsSearch } from 'react-icons/bs'
 
 const Header = () => {
 
+    const user = null;
+
     const [toggleUser, setToggleUser] = useState(false)
     const onClick = () => {
         setToggleUser(!toggleUser)
@@ -40,7 +42,12 @@ const Header = () => {
                     <ul>
                         <li><Link to="/profile">Profile</Link></li>
                         <li><Link to="/settings">Settings</Link></li>
-                        <li><Link to="/login">Log in</Link></li>
+                        <hr style={{display: "block", margin: "10px"}}/>
+                        {!user ? (
+                            <li id="btn-login"><Link to="/login">Log in</Link></li>
+                        ) : (
+                            <li id="btn-logout"><Button text="Log out"/></li>
+                        )}
                     </ul>
                 </div>}
             </div>

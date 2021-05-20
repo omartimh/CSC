@@ -1,12 +1,21 @@
-import { Link } from 'react-router-dom'
-import { FiUser } from 'react-icons/fi'
-import { BsLockFill } from 'react-icons/bs'
-import Button from './Button'
+import { Link } from 'react-router-dom';
+import { GoogleLogin } from 'react-google-login';
+import { FiUser } from 'react-icons/fi';
+import { BsLockFill } from 'react-icons/bs';
+import Button from './Button';
 
 const Login = () => {
 
     const login = () => {
-        console.log("Login")
+        console.log("Login");
+    }
+
+    const googleSuccess = (res) => {
+        console.log(res);
+    }
+
+    const googleFailure = () => {
+        console.log("Google Sign In was unsuccessful, Try Again.");
     }
 
     return (
@@ -28,13 +37,21 @@ const Login = () => {
                     <Button text="Log in" className="btn btn-primary" style={{width: "100%"}} onClick={login}/>
                 </div>
                 <br/>
-                <div>
-                    <Button text="1" className="btn" onClick={login}/>
-                    <Button text="2" className="btn" onClick={login}/>
-                    <Button text="3" className="btn" onClick={login}/>
+                <div style={{display: "flex", justifyContent: "space-between"}}>
+                    <GoogleLogin
+                        clientId="718725139208-naj82prdff8tnltnjlrvuigkaloc1hds.apps.googleusercontent.com"
+                        render={(renderProps) => (
+                            <Button text="Google" className="btn" onClick={renderProps.onClick} style={{width: "115px", color: "#FFF", backgroundColor: "#f44336"}}/>
+                        )}
+                        onSuccess={googleSuccess}
+                        onFailure={googleFailure}
+                        cookiePolicy="sigle_host_origin"
+                    />
+                    {/* <Button text="Facebook" className="btn" onClick={login} style={{width: "115px", color: "#FFF", backgroundColor: "#0D47A1"}}/> */}
                 </div>
                 <br/>
                 <p className="login-signup">Dont have an account?<Link to="/signup" style={{marginLeft: "5px"}}>Signup Now</Link></p>
+                {/* <p className="login-signup">Dont have an account?<Button style={{marginLeft: "5px", cursor: "pointer", color: "#1976D2", backgroundColor: "transparent", border: "none"}} text="Signup Now" onClick={signup}/></p> */}
             </form>
         </div>
     )

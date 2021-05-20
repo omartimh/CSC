@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
-import { useDispatch } from 'react-reudx';
 
+import Auth from './components/Auth';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './components/Login';
@@ -17,24 +17,25 @@ import Blog from './components/Blog';
 import Courses from './components/Courses';
 import Jobs from './components/Jobs';
 
-import { getPosts } from './actions/posts';
-
 function App() {
-  const dsipatch = useDispatch();
-
-  useEffect(() => {
-    dsipatch(getPosts());
-  }, [dsipatch]);
-
   return (
     <Router>
       <ScrollToTop>
         <div className="container">
-          {/* Login */}
-          <Route path="/login" component={Login}/>
 
-          {/* Signup */}
-          <Route path="/signup" component={Signup}/>
+          {/* Auth */}
+          <Route path="/auth" exact component={Auth}/>
+
+          <Switch>
+            
+            {/* Login */}
+            <Route path="/login" exact component={Login}/>
+
+            {/* Signup */}
+            <Route path="/signup" exact component={Signup}/>
+
+          </Switch>
+
 
           {/* Home */}
           <Route path="/" exact render={(props) => (
@@ -101,7 +102,7 @@ function App() {
               <Footer/>
             </>
           )}/>
-          
+            
           {/* Blog */}
           <Route path="/blog" exact render={(props) => (
             <>

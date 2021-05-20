@@ -1,10 +1,19 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Post from './Post';
 import Button from './Button';
 import { IoIosArrowDown } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+import { getPosts } from '../actions/posts';
+
 
 const Blog = () => {
+
+    const dsipatch = useDispatch();
+
+    useEffect(() => {
+        dsipatch(getPosts());
+    }, [dsipatch]);
 
     const posts = useSelector((state) => state.posts);
     console.log(posts);
