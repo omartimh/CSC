@@ -1,55 +1,41 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ScrollToTop from 'react-router-scroll-top';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import ScrollToTop from 'react-router-scroll-top'
 
-import Auth from './components/Auth';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Help from './components/Help';
-import Profile from './components/Profile';
-import Settings from './components/Settings';
-import Blog from './components/Blog';
-import Courses from './components/Courses';
-import Jobs from './components/Jobs';
+import Auth from './components/Auth/Auth';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Help from './components/Help/Help';
+import Profile from './components/Profile/Profile';
+import Settings from './components/Settings/Settings';
+import Blog from './components/Blog/Blog';
+import Courses from './components/Courses/Courses';
+import Jobs from './components/Jobs/Jobs';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <ScrollToTop>
         <div className="container">
 
-          {/* Auth */}
-          <Route path="/auth" exact component={Auth}/>
-
           <Switch>
-            
-            {/* Login */}
-            <Route path="/login" exact component={Login}/>
-
-            {/* Signup */}
-            <Route path="/signup" exact component={Signup}/>
-
+            <Route path="/auth" exact component={Auth}/>
+            <Route path="/" exact render={(props) => (
+              <>
+                <Header/>
+                <div className="content">
+                  <Home/>
+                </div>
+                <Footer/>
+              </>
+            )}/>
           </Switch>
 
-
-          {/* Home */}
-          <Route path="/" exact render={(props) => (
-            <>
-              <Header/>
-              <div className="content">
-                <Home/>
-              </div>
-              <Footer/>
-            </>
-          )}/>
-
-          {/* About */}
-          <Route path="/about" exact render={(props) => (
+           {/* About */}
+           <Route path="/about" exact render={(props) => (
             <>
               <Header/>
               <div className="content">
@@ -135,7 +121,7 @@ function App() {
               <Footer/>
             </>
           )}/>
-
+          
         </div>
       </ScrollToTop>
     </Router>

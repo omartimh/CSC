@@ -1,0 +1,14 @@
+footer {
+    padding: 50px;
+    width: 80%;
+    margin: auto;
+} footer a {
+    color: #555;
+    font-family: "Poppins";
+    font-weight: 300;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 25px;
+} footer a:hover {
+    color: #1976D2;
+}

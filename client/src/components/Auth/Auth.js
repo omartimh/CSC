@@ -1,0 +1,12 @@
+import './style.css';
+import React from 'react'
+
+const Auth = () => {
+    return (
+        <div className="auth">
+            
+        </div>
+    )
+}
+
+export default Auth
