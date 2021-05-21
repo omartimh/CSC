@@ -12,7 +12,7 @@
     "react-js-pagination": "^3.0.3",
     "react-router-dom": "^5.2.0",
     "react-router-scroll-top": "^0.2.1",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "react-time-ago": "^6.2.2",
     "web-vitals": "^1.1.2"
   },
