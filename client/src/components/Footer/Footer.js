@@ -12,6 +12,7 @@ const Footer = () => {
                 <Link to="/contact">Contact</Link>
                 <Link to="/help">Help</Link>
             </span>
+            <p style={{textAlign: "center", marginTop: "5em"}}><a href="https://msa.edu.eg/msauniversity/"><img style={{width: "100px", height: "70px"}} src="images/msa.png" alt="msa"/></a></p>
         </footer>
     )
 }
