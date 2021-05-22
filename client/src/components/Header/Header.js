@@ -48,7 +48,7 @@ const Header = () => {
                         <li><Link to="/settings">Settings</Link></li>
                         <hr style={{display: "block", margin: "10px"}}/>
                         {!user ? (
-                            <li id="btn-login"><Link to="/login">Log in</Link></li>
+                            <li id="btn-login"><Link to="/auth">Log in</Link></li>
                         ) : (
                             <li id="btn-logout"><Button text="Log out"/></li>
                         )}
