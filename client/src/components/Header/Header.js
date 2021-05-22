@@ -1,15 +1,35 @@
 import './style.css';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaRegUser } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { FaRegUserCircle } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
+
 import Button from '../Button/Button';
 
 const Header = () => {
 
-    const user = null;
+    const [user = null, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+    const [toggleUser, setToggleUser] = useState(false);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const location = useLocation();
+    
+    useEffect(() => {
+        const token = user?.token;
 
-    const [toggleUser, setToggleUser] = useState(false)
+        // JWT ...
+
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
+
+    const logout = () => {
+        dispatch({ type: 'LOGOUT' });
+        history.push('/');
+        setUser(null);
+        setToggleUser(false);
+    };
 
     const onClick = () => {
         setToggleUser(!toggleUser)
@@ -41,8 +61,20 @@ const Header = () => {
             </div>
 
             <div className="user">
-                <Button onClick={onClick} icon={<FaRegUser/>}/>
-                {toggleUser && <div class="dropdown">
+                {!user ? (
+                    <Button onClick={onClick} icon={<FaRegUserCircle className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
+                ) : (
+                    <>
+                        <h5>{ user.result.name.split(" ")[0] + " " + user.result.name.split(" ")[1] }</h5>
+                        {user.result.imageUrl ? (
+                        <Button onClick={onClick} text={<img src={user.result.imageUrl} alt={user.result.email}/>} style={{backgroundColor: "transparent"}}/>
+                        ) : (
+                            <Button onClick={onClick} icon={<FaRegUserCircle className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
+                        )}
+                    </>
+                )}
+                
+                {toggleUser && <div className="dropdown">
                     <ul>
                         <li><Link to="/profile">Profile</Link></li>
                         <li><Link to="/settings">Settings</Link></li>
@@ -50,7 +82,7 @@ const Header = () => {
                         {!user ? (
                             <li id="btn-login"><Link to="/auth">Log in</Link></li>
                         ) : (
-                            <li id="btn-logout"><Button text="Log out"/></li>
+                            <li id="btn-logout"><Button text="Log out" onClick={logout}/></li>
                         )}
                     </ul>
                 </div>}
