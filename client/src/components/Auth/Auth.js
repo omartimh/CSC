@@ -1,24 +1,43 @@
 import './style.css';
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
 import { GoogleLogin } from 'react-google-login';
 import { FiUser } from 'react-icons/fi';
 import { BsLockFill } from 'react-icons/bs';
 import { FaGoogle } from 'react-icons/fa';
+
 import Label from '../Label/Label';
-import Input from '../Input/Input'
+import Input from '../Input/Input';
 import Button from '../Button/Button';
+import {signin, signup} from '../../actions/auth';
+
+const initialState = { username: '', firstName: '', lastName: '', email: '', password: '', repeatPassword: '' };
 
 const Auth = () => {
 
     const [isSignup, setIsSignup] = useState(false);
+    const [formData, setFormData] = useState(initialState);
+
+    const dispatch = useDispatch();
+    const history = useHistory();
 
     const toggleForm = () => {
-        setIsSignup(!isSignup)
+        setIsSignup(!isSignup);
     };
 
-    const submit = () => {
-        console.log("Submit")
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isSignup) {
+            dispatch(signup(formData, history));
+        } else {
+            dispatch(signin(formData, history));
+        }
+    };
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
     const googleSuccess = async (res) => {
@@ -26,7 +45,8 @@ const Auth = () => {
         const token = res?.tokenID;
 
         try {
-            
+            dispatch({ type: 'AUTH', data: { result, token } });
+            history.push('/');
         } catch (error) {
             console.log(error);
         }
@@ -38,21 +58,21 @@ const Auth = () => {
 
     return (
         <div className="auth">
-            <form>                
+            <form onSubmit={handleSubmit}>                
                 {isSignup ? (
                     <>
                         <h2>Sign Up</h2>
                         <hr/><br/>
                         <div className="signup">
                             <div>
-                                <Input type="text" id="firstName" name="firstName" placeholder="First Name" className="input" autoComplete="off"/>
-                                <Input type="text" id="lastName" name="lastName" placeholder="Last Name" className="input" autoComplete="off"/>
+                                <Input onChange={handleChange} type="text" id="firstName" name="firstName" placeholder="First Name" className="input" autoComplete="off"/>
+                                <Input onChange={handleChange} type="text" id="lastName" name="lastName" placeholder="Last Name" className="input" autoComplete="off"/>
                             </div>
                             
-                            <Input type="email" id="email" name="email" placeholder="Email" className="input" autoComplete="off"/>
-                            <Input type="password" id="password" name="password" placeholder="Password" className="input" autoComplete="off"/>
-                            <Input type="password" id="repeatPassword" name="repeatPassword" placeholder="Repeat Password" className="input" autoComplete="off"/>
-                            <Button text="Sign Up" className="btn btn-success" onClick={submit} style={{width: "100%"}}/>
+                            <Input onChange={handleChange} type="email" id="email" name="email" placeholder="Email" className="input" autoComplete="off"/>
+                            <Input onChange={handleChange} type="password" id="password" name="password" placeholder="Password" className="input" autoComplete="off"/>
+                            <Input onChange={handleChange} type="password" id="repeatPassword" name="repeatPassword" placeholder="Repeat Password" className="input" autoComplete="off"/>
+                            <Button type="submit" text="Sign Up" className="btn btn-success" style={{width: "100%"}}/>
                             <p className="signin-signup" style={{marginTop: "1.5em"}}>Already a member?<Button text="Login Here" onClick={toggleForm}/></p>
                         </div>
                     </>
@@ -63,14 +83,14 @@ const Auth = () => {
                         <div className="signin">
                             <div>
                                 <Label htmlFor="username" text={<FiUser style={{fontSize: "25px", position: "relative", top: "3px"}}/>} className="label"/>
-                                <Input type="text" id="username" name="username" placeholder="Username" className="input" autoComplete="off" autoFocus="off"/>
+                                <Input onChange={handleChange} type="text" id="username" name="email" placeholder="Username" className="input" autoComplete="off" autoFocus="off"/>
                             </div>
                             <div>
                                 <Label htmlFor="password" text={<BsLockFill style={{fontSize: "25px", position: "relative", top: "3px"}}/>} className="label"/>
-                                <Input type="password" id="password" name="password" placeholder="Password" className="input"/>
+                                <Input onChange={handleChange} type="password" id="password" name="password" placeholder="Password" className="input"/>
                             </div>
                             <Link to="#" className="forgotPassword">Forgot Password?</Link>
-                            <Button text="Sign In" className="btn btn-primary" onClick={submit} style={{width: "100%", marginTop: "1em"}}/>
+                            <Button type="submit" text="Sign In" className="btn btn-primary" style={{width: "100%", marginTop: "1em"}}/>
                             <GoogleLogin
                                 clientId="718725139208-naj82prdff8tnltnjlrvuigkaloc1hds.apps.googleusercontent.com"
                                 render={(renderProps) => (
