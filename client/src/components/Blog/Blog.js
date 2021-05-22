@@ -11,7 +11,7 @@ const Blog = () => {
         console.log("Post")
     }
 
-    const [posts, setPost] = useState([
+    const [posts, /* setPost */] = useState([
         {
             id: 1,
             author: "John Doe",
@@ -33,7 +33,7 @@ const Blog = () => {
             body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo, nesciunt dignissimos, consequatur sequi rerum officia corrupti eos excepturi, et culpa maiores saepe quos non! Nesciunt, velit? Ex suscipit enim commodi expedita incidunt corporis excepturi voluptas eos architecto laboriosam? Aut adipisci ullam harum at minus est nisi doloremque illo eos aperiam.",
             date: "5 hours ago"
         }
-    ])
+    ]);
 
     return (
         <div className="blog">

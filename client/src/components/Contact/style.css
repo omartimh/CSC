@@ -26,7 +26,7 @@
 }
 
 .button {
-  margin-top: 15px;
+  margin: 15px auto;
   border: none;
   outline: 0;
   display: inline-block;
@@ -39,16 +39,3 @@
 } .button:hover {
   background-color: #1E1E1E;
 }
-
-/* @media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-} 
-
-.container1::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-} */

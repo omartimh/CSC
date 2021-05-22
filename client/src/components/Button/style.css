@@ -1,12 +1,11 @@
 .btn {
     padding: 5px;
-    border: none;
     outline: none;
     width: 75px;
-    height: auto;
-    font-size: 18px;
+    font-size: 17px;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 5px;
+    border: 1px solid #CFCFCF;
     transition: all 0.2s;
 } .btn-default {
     color: #fff;
