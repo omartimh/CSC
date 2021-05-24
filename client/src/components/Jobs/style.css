@@ -1,0 +1,21 @@
+.jobs {
+    
+}
+.jobs .search-jobs
+{
+    border: none;
+    outline: 1px solid #CECECE;
+    font-size: 18px;
+    padding: 10px;
+    height: 35px;
+    background-color: #FFF;
+} .jobs .btn-search {
+    border: none;
+    outline: 1px solid #CECECE;
+    font-size: 18px;
+    padding: 5px 7px;
+    background-color: rgb(240, 135, 65);
+    color: #FFF;
+    font-weight: 400;
+    height: 35px;
+}
