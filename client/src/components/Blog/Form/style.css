@@ -1,0 +1,58 @@
+.blogForm {
+    position: relative;
+    width: 55%;
+    margin: auto;
+    height: 740px;
+    padding: 1em 5em;
+    border-bottom: 1px solid #CCC;
+    background-color: #FFF;
+} .blogForm h3 {
+    position: absolute;
+    top: 0.5px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    padding: 7px;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: #bdbdbd;
+} .blogForm form {
+    width: 100%;
+    margin-top: 3em;
+} .blogForm form #wrap{
+    margin: 1.5em auto;
+} .blogForm form div label {
+    display: block;
+    padding-bottom: 3px;
+    font-size: 17px;
+} .blogForm form div input {
+    outline: 1px solid #CCC;
+    border: none;
+    border-radius: 3px;
+    display: block;
+    width: 100%;
+    padding: 7px 15px;
+    font-size: 15px;
+} .blogForm form div input:hover {
+    cursor: pointer;
+} .blogForm form div input:focus {
+    cursor: text;
+    box-shadow: 0px 0px 3px 1px #2196F3;
+} .blogForm form div button {
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 3px;
+} .blogForm form div #blogFormBack {
+    font-size: 15px;
+    font-weight: 300;
+    padding: 4.5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    cursor: pointer;
+    color: #1e88e5;
+    background-color: #F7F7F7;
+} .blogForm form div #blogFormBack:hover {
+    background-color: #F3F3F3;
+}
