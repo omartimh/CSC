@@ -6,7 +6,7 @@ const Input = ({ id, type, value, name, placeholder, className, style, autoCompl
 }
 
 Input.defaultProps = {
-    placeholder: "Input"
+    
 }
 
 export default Input

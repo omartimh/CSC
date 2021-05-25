@@ -48,8 +48,8 @@ const Header = () => {
                 <ul>
                     <li><Link to="/courses">Courses</Link></li>
                     <li><Link to="/jobs">Jobs</Link></li>
-                    <li><Link to="#">News</Link></li>
-                    <li><Link to="/blog" id="btn-blog" className="btn btn-default" style={{display: "inline", width: "70px", padding: "3px 15px"}}>Blog</Link></li>
+                    <li><Link to="#">Newsfeed</Link></li>
+                    <li><Link to="/blog" id="btn-blog" className="btn btn-default" style={{display: "inline", width: "70px", padding: "3px 15px"}}>Posts</Link></li>
                 </ul>
             </nav>
 

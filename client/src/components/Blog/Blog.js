@@ -1,17 +1,32 @@
 import './style.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { IoIosArrowDown } from 'react-icons/io';
+import { AiOutlineForm } from 'react-icons/ai';
+import { CircularProgress } from '@material-ui/core';
+
 import Post from './Post/Post';
 import Button from '../Button/Button';
-
+import { getPosts } from '../../actions/posts';
 
 const Blog = () => {
 
-    const post = () => {
-        console.log("Post")
-    }
+    const posts = useSelector((state) => state.posts);
+    const history = useHistory();
+    const dispatch = useDispatch();
 
-    const [posts, /* setPost */] = useState([
+    console.log(posts);
+
+    const blogForm = () => {
+        history.push('/blog/form');
+    };
+    
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [dispatch]);
+
+    const [allPosts, /* setPost */] = useState([
         {
             id: 1,
             author: "John Doe",
@@ -37,14 +52,12 @@ const Blog = () => {
 
     return (
         <div className="blog">
-            <form>
-                <textarea name="post" id="post" placeholder="Write something . . . "></textarea>
-                <div className="bar">
-                    <Button text="Post" className="btn btn-primary" onClick={post}/>
-                </div>
-            </form>
-            <div className="sort">
-                <h3 style={{color: "#333"}}>All Posts</h3>
+            <div className="blogHead">
+                <h2 style={{color: "#333", fontWeight: "500"}}>All Posts</h2><br/>
+                <Button id="blogForm" onClick={blogForm} className="btn btn-primary" text="New Post" iconRight={<AiOutlineForm style={{ position: "relative", top: "2.5px", left: "3px" }}/>}/>
+            </div>
+
+            <div className="blogBar">
                 <ul>
                     <li><Button text="Newest"/></li>
                     <li><Button text="Popular"/></li>
@@ -53,13 +66,18 @@ const Blog = () => {
                     <li><Button text="More" icon={<IoIosArrowDown style={{position: "relative", top: "3px"}}/>}/></li>
                 </ul>
             </div>
-            <div className="posts">
-                {posts.map((post) => (
-                    <Post key={post.id} post={post}/>
-                ))}
-            </div>
-        </div>
-    )
-}
 
-export default Blog
+            {!posts.length ? (
+                <div style={{ width: "100%", height: "86vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                    <CircularProgress style={{ color: "#f50057" }}/>
+                </div>
+            ) : posts.map((post) => (<><Post key={post.id} post={post}/><hr/></>))}
+
+            {/* {allPosts.map((post) => (
+                <Post key={post.id} post={post}/>
+            ))}*/}
+            </div>
+    )
+};
+
+export default Blog;

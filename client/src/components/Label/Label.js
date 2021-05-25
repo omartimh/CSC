@@ -6,7 +6,7 @@ const Label = ({ htmlFor, icon, text, className, style }) => {
 }
 
 Label.defaultProps = {
-
+    
 };
 
 export default Label
