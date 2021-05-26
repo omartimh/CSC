@@ -10,7 +10,6 @@ import Label from '../../Label/Label';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
 import { createPost } from '../../../actions/posts';
-import { IoMdFolderOpen } from 'react-icons/io';
 
 const Form = () => {
 

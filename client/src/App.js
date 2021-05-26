@@ -14,6 +14,7 @@ import Settings from './components/Settings/Settings';
 import Blog from './components/Blog/Blog';
 import BlogForm from './components/Blog/Form/Form';
 import Courses from './components/Courses/Courses';
+import CoursesExplore from './components/Courses/Explore/Explore';
 import Jobs from './components/Jobs/Jobs';
 
 const App = () => {
@@ -118,6 +119,17 @@ const App = () => {
               <Header/>
               <div className="content">
                 <Courses/>
+              </div>
+              <Footer/>
+            </>
+          )}/>
+
+          {/* CoursesExplore */}
+          <Route path="/courses/explore" exact render={(props) => (
+            <>
+              <Header/>
+              <div className="content">
+                <CoursesExplore/>
               </div>
               <Footer/>
             </>

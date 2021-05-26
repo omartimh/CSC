@@ -1,0 +1,35 @@
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;  
+} #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+} #customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+} #customers tr:hover {
+    background-color: #ddd;
+} #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #8ca3e2;
+    color: white;
+} #customers a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+} #customers a:visited {
+    color: rgb(20, 87, 99);
+    background-color: transparent;
+    text-decoration: none;
+} #customers a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+} #customers a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+}

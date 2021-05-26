@@ -25,7 +25,7 @@ const Post = ({ post }) => {
                     <Button className="postOptions" icon={<GoKebabHorizontal/>}/>
                 </div>
                 <Markup tagName="span" content={post.body}/>
-                {post.attachedFile && <img src={post.attachedFile}/>}
+                {post.attachedFile && <img src={post.attachedFile} alt={post.title}/>}
             </div>
             
             <div className="postBar">

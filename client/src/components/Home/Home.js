@@ -28,7 +28,7 @@ const Home = () => {
                 <img src="images/home-comm.jpeg" alt="home-comm"/>
                 <Link to="/blog">Our Community</Link>
             </div>
-            <div className="courses">
+            <div className="homeCourses">
                 <h3>Get a Look at Exclusive Courses, Tutorials, Vouchers and More...</h3>
             </div>
         </div>
