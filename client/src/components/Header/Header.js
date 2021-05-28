@@ -23,7 +23,7 @@ const Header = () => {
         // JWT ...
 
         setUser(JSON.parse(localStorage.getItem('profile')));
-    }, [location]);
+    }, [user?.token, location]);
 
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
@@ -43,6 +43,8 @@ const Header = () => {
     return (
         <header>
 
+            {/* <span className="active"></span> */}
+            
             <div className="title"><Link to="/"><img src="logo.png" alt="CSC" /></Link></div>
 
             <nav>
@@ -50,7 +52,7 @@ const Header = () => {
                     <li><Link to="/courses">Courses</Link></li>
                     <li><Link to="/jobs">Jobs</Link></li>
                     <li><Link to="#">News Feed</Link></li>
-                    <li><Link to="/blog" id="btn-blog" className="btn btn-default" style={{display: "inline", width: "70px", padding: "3px 15px"}}>Blog</Link></li>
+                    <li><Link to="/blog" id="btn-blog" className="btn btn-default">Blog</Link></li>
                 </ul>
             </nav>
 

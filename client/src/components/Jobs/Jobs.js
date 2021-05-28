@@ -65,13 +65,15 @@ const Jobs = () => {
                     </div>
 
                     <table id="customers">
-                        <tr ><th>Eployment Online Offers</th></tr>
-                        <tr><td><a href="https://www.indeed.com/jobs?q=computer+science&l="target="_blank">Indeed</a></td></tr>
-                        <tr><td><a href="https://www.bayt.com/en/egypt/jobs/computer-science-jobs/"target="_blank">Bayt</a></td></tr>
-                        <tr><td><a href="https://www.linkedin.com/jobs/search/?keywords=computer%20science" target="_blank">linkedin</a></td></tr>
-                        <tr><td><a href="https://stackoverflow.com/jobs" target="_blank">Stackoverflow</a></td></tr>
-                        <tr><td><a href="https://wuzzuf.net/a/Computer-Science-Jobs-in-Egypt" target="_blank">Wuzzuf</a></td></tr>
-                        <tr><td><a href="https://www.naukrigulf.com/computer-science-jobs-in-egypt" target="_blank">Naukrigulf</a></td></tr>
+                        <tbody>
+                            <tr ><th>Eployment Online Offers</th></tr>
+                            <tr><td><a href="https://www.indeed.com/jobs?q=computer+science&l=">Indeed</a></td></tr>
+                            <tr><td><a href="https://www.bayt.com/en/egypt/jobs/computer-science-jobs/">Bayt</a></td></tr>
+                            <tr><td><a href="https://www.linkedin.com/jobs/search/?keywords=computer%20science" >linkedin</a></td></tr>
+                            <tr><td><a href="https://stackoverflow.com/jobs">Stackoverflow</a></td></tr>
+                            <tr><td><a href="https://wuzzuf.net/a/Computer-Science-Jobs-in-Egypt">Wuzzuf</a></td></tr>
+                            <tr><td><a href="https://www.naukrigulf.com/computer-science-jobs-in-egypt">Naukrigulf</a></td></tr>
+                        </tbody>
                     </table>
                 </>
             )}

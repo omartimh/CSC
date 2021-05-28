@@ -12,7 +12,6 @@ import Help from './components/Help/Help';
 import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 import Blog from './components/Blog/Blog';
-import BlogForm from './components/Blog/Form/Form';
 import Courses from './components/Courses/Courses';
 import CoursesExplore from './components/Courses/Explore/Explore';
 import Jobs from './components/Jobs/Jobs';
@@ -97,17 +96,6 @@ const App = () => {
               <Header/>
               <div className="content">
                 <Blog/>
-              </div>
-              <Footer/>
-            </>
-          )}/>
-
-          {/* BlogForm */}
-          <Route path="/blog/form" exact render={(props) => (
-            <>
-              <Header/>
-              <div className="content">
-                <BlogForm/>
               </div>
               <Footer/>
             </>

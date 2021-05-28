@@ -1,7 +1,6 @@
 import './style.css';
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import FileBase from 'react-file-base64';
 import { Editor } from "@tinymce/tinymce-react";
 import { RiArrowGoBackFill } from 'react-icons/ri';
@@ -9,28 +8,41 @@ import { RiArrowGoBackFill } from 'react-icons/ri';
 import Label from '../../Label/Label';
 import Input from '../../Input/Input';
 import Button from '../../Button/Button';
-import { createPost } from '../../../actions/posts';
+import { createPost, updatePost } from '../../../actions/posts';
 
-const Form = () => {
-
+const Form = ({ blogForm , currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({ author: '', title: '', body: '', tags: '', attachedFile: '' });
+    const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(createPost(postData));
-        history.push('/blog');
+
+        if (currentId) {
+            dispatch(updatePost(currentId, postData));
+        } else {
+            dispatch(createPost(postData));
+        }
+
+        clear();
+        blogForm();
     };
 
     const clear = () => {
-
+        setCurrentId(null);
+        setPostData({ author: '', title: '', body: '', tags: '', attachedFile: '' }); 
     };
+
+    useEffect(() => {
+        if (post) {
+            setPostData(post);
+        }
+    }, [post]);
 
     return (
         <div className="blogForm">
-            <h3>Write Post</h3>
             <form onSubmit={handleSubmit}>
+                <h3>{ currentId ? "Edit" : "Create" } Post</h3>
                 <div id="wrap">
                     <Label text="Title"/>
                     <Input name="title" value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })}/>
@@ -67,20 +79,19 @@ const Form = () => {
                         multiple={false}
                         onDone={({base64}) => setPostData({ ...postData, attachedFile: base64 })}
                     />
-                    {/* <Input name="attachedFile" value={postData.attachedFile} onChange={(e) => setPostData({ ...postData, attachedFile: e.target.value })}/> */}
                 </div>
 
                 <div id="wrap">
                     <Label  text="Tags"/>
-                    <Input name="tags" value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value })}/>
+                    <Input name="tags" value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })}/>
                 </div>
 
                 <div id="wrap" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <span style={{ display: "inline-block" }}>
-                        <Button type="submit" text="Post" className="btn btn-primary"/>
+                        <Button type="submit" text={currentId ? "Update" : "Post"} className="btn btn-primary"/>
                         <Button text="Clear" className="btn btn-danger" onClick={clear} style={{ marginLeft: "1em" }}/>
                     </span>
-                    <Link id="blogFormBack" to="/blog">Go Back <RiArrowGoBackFill style={{ position: "relative", top: "2.5px", left: "3px" }}/></Link>
+                    <Button id="blogFormBack" text="Go Back" className="btn" onClick={() => {blogForm(); clear();}} iconRight={<RiArrowGoBackFill style={{ position: "relative", top: "2.5px", left: "3px" }}/>}/>
                 </div>
             </form>
         </div>

@@ -1,7 +1,11 @@
 .post {
-    margin: 0 0;
-    padding-bottom: 1em;
-} .post .postAuthor {
+    padding: 1em 0;
+    border-bottom: 1px solid #CCC;
+} .post:last-child {
+    border-bottom: none;
+}
+
+.post .postAuthor {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +15,9 @@
     text-decoration: none;
     font-weight: 700;
     color: #000;
-} .post .postBody {
+} 
+
+.post .postBody {
     width: 92%;
     height: fit-content;
     margin-left: auto;
@@ -46,7 +52,25 @@
     border-radius: 0px 0px 10px 10px;
     margin-bottom: -7px;
     background-color: #F5F5F5;
-} .post .postBar {
+}
+
+.post .postTags {
+    margin-left: auto;
+    margin-top: 0.5em;
+    padding: 0 0.2em;
+    width: 92%;
+} .post .postTags p {
+    display: inline-block;
+    width: fit-content;
+    cursor: pointer;
+    font-weight: 300;
+    color: #3C3C3C;
+}  .post .postTags p:hover {
+    text-decoration: underline;
+    color: #1565C0;
+}
+
+.post .postBar {
     width: 92%;
     margin-left: auto;
     margin-top: 1em;
