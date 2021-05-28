@@ -1,6 +1,7 @@
 import './style.css';
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import FileBase from 'react-file-base64';
 import { Editor } from "@tinymce/tinymce-react";
 import { RiArrowGoBackFill } from 'react-icons/ri';
@@ -14,14 +15,16 @@ const Form = ({ blogForm , currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({ author: '', title: '', body: '', tags: '', attachedFile: '' });
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
     const dispatch = useDispatch();
+    const history = useHistory();
+    const user = JSON.parse(localStorage.getItem('profile'));
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         if (currentId) {
-            dispatch(updatePost(currentId, postData));
+            dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
         } else {
-            dispatch(createPost(postData));
+            dispatch(createPost({ ...postData, name: user?.result?.name }));
         }
 
         clear();
@@ -38,6 +41,10 @@ const Form = ({ blogForm , currentId, setCurrentId}) => {
             setPostData(post);
         }
     }, [post]);
+
+    if (!user?.result?.name) {
+        history.push('/auth');
+    }
 
     return (
         <div className="blogForm">
