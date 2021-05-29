@@ -11,6 +11,7 @@
     justify-content: space-between;
     font-size: 17px;
     margin-bottom: 1em;
+    text-transform: capitalize;
 } .post .postAuthor a {
     text-decoration: none;
     font-weight: 700;
@@ -66,7 +67,6 @@
     font-weight: 300;
     color: #3C3C3C;
 }  .post .postTags p:hover {
-    text-decoration: underline;
     color: #1565C0;
 }
 
@@ -81,7 +81,7 @@
     background-color: transparent;
     outline: none;
     border: none;
-    font-size: 25px;
+    font-size: 15px;
     cursor: pointer;
     opacity: 0.8;
 } .post .postBar button:hover {
