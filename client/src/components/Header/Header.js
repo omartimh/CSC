@@ -45,7 +45,7 @@ const Header = () => {
 
     return (
         <header>            
-            <div className="title"><Link to="/"><img src="logo.png" alt="CSC" /></Link></div>
+            <div className="title"><Link to="/"><img src="/logo.png" alt="CSC" /></Link></div>
 
             <nav>
                 <ul>

@@ -1,0 +1,51 @@
+.course {
+    position: relative;
+    margin: 2em 10em;
+    border-radius: 7px; 
+    border: 1px solid #CCC;
+    background-color: #F9F9F9;
+} .course .courseImg {
+    width: 100%;
+    height: 25em;
+    border-radius: 7px 7px 0px 0px; 
+} .course span {
+    position: absolute;
+    width: 100%;
+    height: 25em;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 7px 7px 0px 0px; 
+    background-color: rgba(0, 0, 0, 0.384);
+} .course span p {
+    position: absolute;
+    bottom: 0;
+    margin: 1em;
+    font-size: 35px;
+    color: #FFF;
+} .course .coursContent {
+    display: flex;
+    justify-content: flex-start;
+    background-color: #F9F9F9;
+    border-radius: 0px 0px 7px 7px; 
+} .course .courseDivider {
+    width: 50%;
+    margin: 1em 3em;
+} .course .courseElement {
+    margin: 1em 0;
+} .course .courseElement h4 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #37474F;
+} .course .courseElement ul {
+    margin-left: 2em;
+} .course .courseElement ul li {
+    list-style: circle;
+} .course .courseElement a {
+    text-decoration: none;
+    font-weight: 400;
+    color: #2196F3;
+    transition: all 0.2s;
+} .course .courseElement a:hover {
+    color: #E91E63;
+}
