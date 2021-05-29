@@ -1,7 +1,8 @@
 import './style.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback  } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import decode from 'jwt-decode';
 
 import { FaRegUserCircle } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
@@ -16,22 +17,6 @@ const Header = () => {
     const history = useHistory();
     const location = useLocation();
     
-    useEffect(() => {
-        const token = user?.token;
-        token && console.log(token);
-
-        // JWT ...
-
-        setUser(JSON.parse(localStorage.getItem('profile')));
-    }, [user?.token, location]);
-
-    const logout = () => {
-        dispatch({ type: 'LOGOUT' });
-        history.push('/');
-        setUser(null);
-        setToggleUser(false);
-    };
-
     const onClick = () => {
         setToggleUser(!toggleUser)
     }
@@ -40,11 +25,26 @@ const Header = () => {
         console.log("Search")
     }
 
-    return (
-        <header>
+    const logout = useCallback(() => {
+        dispatch({ type: 'LOGOUT' });
+        history.push('/');
+        setUser(null);
+        setToggleUser(false);
+      }, [dispatch, history])
 
-            {/* <span className="active"></span> */}
-            
+    useEffect(() => {
+        const token = user?.token;
+        if (token) {
+            const decodedToken = decode(token);
+            if (decodedToken.exp * 1000 < new Date().getTime()) {
+                logout();
+            }
+        }
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location, user?.token, logout]);
+
+    return (
+        <header>            
             <div className="title"><Link to="/"><img src="logo.png" alt="CSC" /></Link></div>
 
             <nav>
@@ -90,7 +90,6 @@ const Header = () => {
                     </ul>
                 </div>}
             </div>
-
         </header>
     )
 }
