@@ -4,6 +4,7 @@
   padding: 2em 3em;
   padding-bottom: 1px;
   background-color: #FFF;
+  box-shadow: 2px 0px 1px 0px #CCC, -2px 0px 1px 0px #CCC;
 }
 
 .blog .blogHead {

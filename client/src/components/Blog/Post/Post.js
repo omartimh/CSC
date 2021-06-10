@@ -11,6 +11,7 @@ import { Button as ButtonM } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbUpAltOutlined from '@material-ui/icons/ThumbUpAltOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { CircularProgress } from '@material-ui/core';
 
 import Button from '../../Button/Button';
 import { likePost } from '../../../actions/posts';
@@ -34,19 +35,20 @@ const Post = ({ post, blogForm, setCurrentId }) => {
 
     const Likes = () => {
         if (post.likes.length > 0) {
-          return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
+        return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
             ? (
-              <><ThumbUpAltIcon fontSize="small" style={{ marginBottom: "3px" }}/>&nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</>
+            <><ThumbUpAltIcon fontSize="small" style={{ marginBottom: "3px" }}/>&nbsp;{post.likes.length > 2 ? `You and ${post.likes.length - 1} others` : `${post.likes.length} like${post.likes.length > 1 ? 's' : ''}` }</>
             ) : (
-              <><ThumbUpAltOutlined fontSize="small" style={{ marginBottom: "3px" }}/>&nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</>
+            <><ThumbUpAltOutlined fontSize="small" style={{ marginBottom: "3px" }}/>&nbsp;{post.likes.length} {post.likes.length === 1 ? 'Like' : 'Likes'}</>
             );
         }
+
     
         return <><ThumbUpAltOutlined fontSize="small" style={{ marginBottom: "3px" }}/>&nbsp;Like</>;
     };
 
     return (
-        <div className="post">
+        post.likes ? <div className="post">
             <div className="postAuthor">
                 <Link to="#"><BiUserPin style={{ fontSize: "35px", color: "#1e88e5", position: "relative", top: "13.5px", marginRight: "15px"}}/>{post.name}</Link>
                 <span className="date" style={{ fontSize: "15px", fontWeight: "300", color: "C1C1C1", position: "relative", top: "11px" }}>{moment(post.createdAt).fromNow()}<BsClockHistory style={{ marginLeft: "0.5em", position: "relative", top: "3.5px" }}/></span>
@@ -59,12 +61,12 @@ const Post = ({ post, blogForm, setCurrentId }) => {
                         <Button onClick={postEdit} className="postOptions" icon={<GoKebabHorizontal/>}/>
                     )}
                 </div>
-                <Markup tagName="span" content={post.body}/>
+                <Markup tagName="markup" content={post.body}/>
                 {post.attachedFile && <img src={post.attachedFile} alt={post.title}/>}
             </div>
             
             <div className="postTags">
-                {post.tags.map((tag) => <p key={Math.random().toString(36).substr(2, 9)}>#{tag}&nbsp;</p>)}
+                {post.tags && post.tags.map((tag) => <p key={Math.random().toString(36).substr(2, 9)}>#{tag}&nbsp;</p>)}
             </div>
 
             <div className="postBar">
@@ -73,7 +75,11 @@ const Post = ({ post, blogForm, setCurrentId }) => {
                     <ButtonM size="small" color="secondary" onClick={postDelete}><DeleteIcon fontSize="small" style={{ marginBottom: "3px" }}/> Delete</ButtonM>
                 )}
             </div>
-        </div>
+        </div> : (
+            <div style={{ width: "100%", height: "86vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <CircularProgress style={{ color: "#f50057" }}/>
+            </div>
+        )
     )
 }
 

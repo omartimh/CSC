@@ -12,6 +12,7 @@
     padding: 0 5em;
     border-bottom: 1px solid #CCC;
     background-color: #FFF;
+    box-shadow: 2px 0px 1px 0px #CCC, -2px 0px 1px 0px #CCC;
 } .blogForm form #wrap{
     margin: 1.5em auto;
 } .blogForm form div label {

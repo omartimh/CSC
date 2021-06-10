@@ -17,3 +17,8 @@ export const createPost = (newPost) => API.post('/posts', newPost);
 export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
 export const deletePost = (id) => API.delete(`/posts/${id}`);
+
+export const fetchCourses = () => API.get('/courses');
+export const createCourse = (newCourse) => API.post('/courses', newCourse);
+export const updateCourse = (id, updatedCourse) => API.patch(`/courses/${id}`, updatedCourse);
+export const deleteCourse = (id) => API.delete(`/courses/${id}`);
