@@ -11,8 +11,8 @@ export const getCourses = async (req, res) => {
 };
 
 export const createCourse = async (req, res) => {
-    const { title, description, content, prerequisites, duration, url } = req.body;
-    const newCourse = new Course({ title, description, content, prerequisites, duration, url });
+    const { title, description, content, prerequisites, duration, thumbnail, url } = req.body;
+    const newCourse = new Course({ title, description, content, prerequisites, duration, thumbnail, url });
     try {
         await newCourse.save();
         res.status(201).json(newCourse);

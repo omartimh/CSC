@@ -6,6 +6,7 @@ const courseSchema = mongoose.Schema({
     content: [String],
     prerequisites: [String],
     duration: String,
+    thumbnail: String,
     url: String,
 });
 

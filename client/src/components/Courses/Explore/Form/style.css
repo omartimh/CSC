@@ -1,9 +1,10 @@
 .coursesForm form {
     margin: auto;
     padding: 3em;
-    width: 45%;
+    width: 50%;
     height: 100%;
     background-color: #FFF;
+    box-shadow: 2px 0px 1px 0px #CCC, -2px 0px 1px 0px #CCC;
 } .coursesForm form div {
     margin: 2em;
 } .coursesForm form div label{
@@ -32,7 +33,30 @@
     border-radius: 3px;
     cursor: pointer;
 } .coursesForm form div button {
-    width: fit-content;
+    width: 150px;
     font-size: 17px;
-    padding: 0.7em 3em;
+    padding: 0.5em 0;
+}
+
+.coursesForm form span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+} .coursesForm form span h2 {
+    font-weight: 400;
+} .coursesForm form span button {
+    padding: 0.5em 1em;
+    font-weight: 700;
+    font-size: 15px;
+    outline: none;
+    border-radius: 5px;
+    border: 3px solid #FFA000;
+    color: #FFA000;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+} .coursesForm form span button:hover {
+    color: #FFF;
+    background-color: #FFA000;
 }

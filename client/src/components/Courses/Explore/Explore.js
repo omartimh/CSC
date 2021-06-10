@@ -15,7 +15,7 @@ const Explore = () => {
     const courses = useSelector((state) => state.courses);
     const dispatch = useDispatch();
 
-    const addCourse = () => {
+    const courseForm = () => {
         setToggleFomr(!toggleForm);
     };
 
@@ -27,15 +27,15 @@ const Explore = () => {
         <div className="coursesExplore">
             {toggleForm ? (
                 <>
-                    <Form addCourse={addCourse}/>
-                    <Button text="Courses" className="btn btn-danger toggle" onClick={addCourse}/>
+                    <Form courseForm={courseForm}/>
                 </>   
             ) : (
                 <div className="coursesBrowse">
                     <div className="coursesBrowseTitle">
                         <h1>All Courses</h1>
-                        <Button text="Add Course" className="btn btn-primary toggle" onClick={addCourse}/>
+                        <Button text="Add Course" className="btn btn-primary toggle" onClick={courseForm}/>
                     </div>
+                    
                     <div className="blogBar">
                         <ul>
                             <li><Button text="Newest"/></li>
@@ -46,17 +46,10 @@ const Explore = () => {
                         </ul>
                     </div>
 
-                    {/* <hr/>   
-                    <Course/>
-                    <hr />
-                    <Course/>
-                    <hr />
-                    <Course/> */}
-
                     {!courses.length ? (
-                    <div style={{ width: "100%", height: "45vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
-                        <CircularProgress style={{ color: "#f50057" }}/>
-                    </div>
+                        <div style={{ width: "100%", height: "45vh", display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <CircularProgress style={{ color: "#f50057" }}/>
+                        </div>
                     ) : courses.map((course) => (
                         <Course key={course._id} course={course}/>
                     ))} 

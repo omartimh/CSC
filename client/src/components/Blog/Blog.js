@@ -5,6 +5,7 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { AiOutlineForm } from 'react-icons/ai';
 import { CircularProgress } from '@material-ui/core';
 
+import Pagination from '../Pagination/Pagination';
 import Form from './Form/Form';
 import Post from './Post/Post';
 import Button from '../Button/Button';
@@ -14,6 +15,8 @@ const Blog = () => {
 
     const [currentId, setCurrentId] = useState(null);
     const [toggleForm, setToggleForm] = useState(false);
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [postsPerPage] = useState(1);
     const posts = useSelector((state) => state.posts);
     const dispatch = useDispatch();
     
@@ -24,6 +27,12 @@ const Blog = () => {
     useEffect(() => {
         dispatch(getPosts());
     }, [currentId, dispatch]);
+
+    // const indexOfLastPost = currentPage * postsPerPage;
+    // const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    // const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+    // const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
     return (
         toggleForm ? (
@@ -52,6 +61,7 @@ const Blog = () => {
                 ) : posts.map((post) => (
                     <Post key={post._id} post={post} blogForm={blogForm} setCurrentId={setCurrentId}/>
                 ))}
+                {/* <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate}/> */}
             </div>
         )
     )
