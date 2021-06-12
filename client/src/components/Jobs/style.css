@@ -1,8 +1,136 @@
-#customers {
+.jobs {
+
+} .jobsContainer {
+    margin: 0.2em;
+    display: grid;
+    grid-template-columns: 0.275fr 1fr;
+    grid-gap: 0.2em;
+    grid-template-areas: 'aside offers';
+}
+
+aside {
+    min-width: 20.6em;
+    display: flex;
+    flex-direction: column;
+    grid-area: aside;
+    background: #FFF;
+    overflow-y: auto;
+} aside form {
+    padding: 0 2em;
+    letter-spacing: 0.5px;
+} aside form div {
+    margin: 1em 0;
+} aside form h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #212121;
+} aside form input {
+    margin-right: 0.7em;
+    font-size: 1rem;
+} aside form label {
+    font-size: 1rem;
+    font-weight: 300;
+} aside hr {
+    background: #CCC;
+    height: 0.1em;
+    border: none;
+}
+
+.offers {
+    grid-area: offers;
+    background: #FFF;
+} .offers .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    border-bottom: 0.2em solid #EEE;
+} .offers .bar h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+} .offers .bar button {
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1rem;
+    color: #010606;
+    transition: all 0.2s ease-in-out;
+} .offers .bar button:hover, .offers .bar button:focus {
+    box-shadow: 0 0 3px 1px #BBDEFB;
+    transition: all 0.2s ease-in-out;
+}.offers .bar button .icon {
+    position: relative;
+    top: 2px;
+    margin-left: 7px;
+} .offersWrapper {
+    padding: 1em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+} .offers .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} .offers .tag {
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} .offers .duration {
+    padding: 0.3em 0.5em;
+    text-transform: capitalize;
+    color: #FFF;
+    background: goldenrod;
+    border-radius: 5px;
+} .offers .salary {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+} .offers h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #010606;
+} .offers .company {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #00B0FF;
+} .offers p {
+    margin: 1em 0;
+    color: #34495e;
+} .offers .view {
+    align-self: center;
+    margin: 1em 0;
+    width: fit-content;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #3E3E3E;
+} .offers .view .icon {
+    font-size: 1.3rem;
+    position: relative;
+    top: 4px;
+    margin-left: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    text-align: center;  
+    text-align: center;   
 } #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
@@ -32,4 +160,4 @@
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
+} */

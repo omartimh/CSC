@@ -1,66 +1,49 @@
 header {
+    z-index: 1;
+    position: fixed;
+    padding: 0 3em;
     width: 100%;
-    height: 55px;
-    background-color: #fff;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #fff;
     border-bottom: 1px solid #C1C1C1;
     box-shadow: 0px 0px 3px #999;
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 56px;
-    font-size: 30px;
-    font-weight: 600;
-} .title a {
-    outline: none;
-    box-sizing: none;
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    text-align: center;
-    transition: all 0.5s;
-} .title a:hover {
-    background-color: #212121;
-} .title a img {
-    width: 70%;
-    height: 95%;
-    margin: auto;
-    margin-top: 1px;
+.title img {
+    margin-top: 0.3em;
+    width: 120px;
 }
   
 nav {
     display: flex;
     align-items: center;
-    min-width: 100px;
     height: 50px;
     margin-right: auto;
-    font-size: 20px;
+    margin-left: 3em;
+    font-size: 1.2rem;
 } nav ul {
     display: flex;
 } nav ul li {
-    position: relative;
     list-style: none;
-    margin: 0px 25px;
+    margin-right: 50px;
 } nav ul li a {
     color: #37474F;
     font-weight: 400;
     text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
 } nav ul li a:hover {
-      color: #FFA000;
+    color: #FFA000;
+    transition: all 0.2s ease-in-out;
 } #btn-blog {
     padding: 0.2em 1.5em;
-    text-align: center;
-    width: fit-content;
-    color: #37474F;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #37474F;
     background-color: transparent;
     border: 3px solid #37474F;
 } #btn-blog:hover {
@@ -68,90 +51,75 @@ nav {
     background-color: #37474F;
 }
 
-/* .active {
-    position: absolute;
-    bottom: 1px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-image: linear-gradient(to bottom right, #18ffff, #304ffe);
-}
-.activeLink {
-color: red;
-} */
-  
 .search {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 300px;
-    height: 50px;
-    font-size: 20px;
+} .search form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } .search input {
     outline: none;
     box-sizing: none;
     border: none;
-    border-left: 1px solid #ccc;
-    border-right: 1px solid #ccc;
     padding: 15px;
     height: 40px;
-    font-size: 18px;
+    font-size: 1rem;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    cursor: pointer;
 } .search input:focus {
-    box-shadow: 0px 0px 5px #1976D2;
-    border-radius: 5px;
+    border: unset; 
+    border-bottom: 1px solid #CCC;
+    cursor: text;
 } .search button {
-    position: absolute;
-    right: 30px;
-    top: 10px;
     outline: none;
     box-sizing: none;
     border: none;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-    background-color: #fff;
+    padding: 0 0.5em;
+    height: 40px;
+    font-size: 1.3rem;
+    background-color: transparent;
     cursor: pointer;
 }
 
-.btn-user {
-    font-size: 37px;
-    color: #333;
-    transition: all 0.2s;
-} .btn-user:hover {
-    color: #000 !important;
-}
+
 
 .user {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: fit-content;
-    padding: 0px 15px;
-    height: 50px;
+    margin-left: 2em;
 } .user button {
-    border: none;
     outline: none;
-    padding: 5px;
-    padding-top: 12px;
-    font-size: 25px;
+    border: none;
     cursor: pointer;
-    background-color: #fff;
-} .user button:hover {
-    color: #1976D2;
+} .btn-user {
+    margin-top: 2px;
+    font-size: 2.1rem;
+    color: #333;
+    border-radius: 25px;
+    transition: all 0.2s ease-in-out;
+} .btn-user:hover {
+    box-shadow: 0px 0px 5px 2px #CCC;
+    transition: all 0.2s ease-in-out;
 } .user h5 {
-    margin-right: 15px;
+    font-size: 1rem;
+    margin-right: 1em;
+    color: #555;
 } .user button img {
+    margin-top: 3px;
     display: inline-block;
     width: 37px;
     border-radius: 25px;
+    transition: all 0.2s ease-in-out;
 } .user button img:hover {
-    box-shadow: 0px 0px 3px 1px #1976D2;
-    /* border: 1px solid #d50000; */
+    box-shadow: 0px 0px 5px 2px #CCC;
+    transition: all 0.2s ease-in-out;
 } .dropdown {
     position: absolute;
-    top: calc(100% + 3px);
+    top: 70px;
     right: 0;
     width: 150px;
     z-index: 2;
@@ -165,6 +133,7 @@ color: red;
     margin-top: 10px;
 } .dropdown ul li {
     margin: 0px 10px;
+    transition: all 0.2s ease-in-out;
 } .dropdown ul li a {
     display: block;
     padding: 8px 12px;
@@ -172,7 +141,7 @@ color: red;
     text-decoration: none;
     border-radius: 3px;
 } .dropdown ul li :hover {
-    transition: all 0.2s;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
     color: #FFF;
     background-color: #37474F;
@@ -183,9 +152,12 @@ color: red;
     border-radius: 3px;
     color: #FFF;
     padding: 4px 12px;
-    background-color: #2196F3;
+    background-color: #0D47A1;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
 } .dropdown ul #btn-login a:hover {
-    background-color: #1976D2;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 } .dropdown ul #btn-logout button {
     display: block;
     width: 100%;
@@ -195,7 +167,10 @@ color: red;
     padding: 7px 12px;
     text-align: left;
     color: #FFF;
-    background-color: #d32f2f;
+    background-color: #f5002d;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
 } .dropdown ul #btn-logout button:hover {
-    background-color: #b71c1c;
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
 }

@@ -4,7 +4,7 @@ import { Link, useHistory, useLocation } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import decode from 'jwt-decode';
 
-import { FaRegUserCircle } from 'react-icons/fa';
+import { VscAccount } from 'react-icons/vsc';
 import { BsSearch } from 'react-icons/bs';
 
 import Button from '../Button/Button';
@@ -45,7 +45,7 @@ const Header = () => {
 
     return (
         <header>            
-            <div className="title"><Link to="/"><img src="/logo.png" alt="CSC" /></Link></div>
+            <Link to="/" className="title"><img src="/logo.png" alt="CSC" /></Link>
 
             <nav>
                 <ul>
@@ -57,22 +57,22 @@ const Header = () => {
             </nav>
 
             <div className="search">
-                <form action="">
-                    <input type="search" name="search" id="search" placeholder="Search" autoComplete="off"/>
+                <form>
+                    <input type="text" name="search" id="search" placeholder="Search" autoComplete="off"/>
                     <Button icon={<BsSearch/>} onClick={search}/>
                 </form>
             </div>
 
             <div className="user">
                 {!user ? (
-                    <Button onClick={onClick} icon={<FaRegUserCircle className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
+                    <Button onClick={onClick} icon={<VscAccount className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
                 ) : (
                     <>
                         <h5>{ user.result.name.split(" ")[0] + " " + user.result.name.split(" ")[1] }</h5>
                         {user.result.imageUrl ? (
                         <Button onClick={onClick} text={<img src={user.result.imageUrl} alt={user.result.email}/>} style={{backgroundColor: "transparent"}}/>
                         ) : (
-                            <Button onClick={onClick} icon={<FaRegUserCircle className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
+                            <Button onClick={onClick} icon={<VscAccount className="btn-user"/>} style={{backgroundColor: "transparent"}}/>
                         )}
                     </>
                 )}
