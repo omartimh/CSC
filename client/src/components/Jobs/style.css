@@ -1,8 +1,177 @@
-#customers {
+.jobs {
+
+}
+
+.createJob {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+} .createJob form {
+    position: relative;
+    padding: 2.5em 3em;
+    border-radius: 3px;
+    background: #FFF;
+    border: 1px solid #CCC;
+} .createJob h2 {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 25px;
+    left: 2.5em;
+    font-size: 1.3rem;
+    font-weight: 600;
+} .createJob .btn {
+    position: absolute;
+    top: 12px;
+    right: 4em;
+    font-size: 0.8rem;
+    width: fit-content;
+    background: crimson;
+} .createJob form div {
+    margin: 1em 0;
+} .createJob form div label {
+    padding: 0 0.3em;
+    font-size: 1rem;
+    position: relative;
+    top: 12px;
+    left: 9px;
+    background: #FFF;
+} .createJob form div input {
+    padding: 0.7em 1em;
+    padding-top: 1.5em;
+    min-width: 350px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+} .createJob form div select {
+    padding: 0.7em 1em;
+    padding-top: 1.5em;
+    min-width: 350px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+} .createJob form div textarea {
+    padding: 0.5em 1em;
+    padding-top: 1.5em;
+    min-height: 150px;
+    min-width: 350px;
+    resize: none;
+    outline: none;
+    font-family: 'arial';
+    border-radius: 3px;
+    border: 1px solid #CCC;
+} .createJob form div input:focus, .createJob form div select:focus, .createJob form div textarea:focus {
+    box-shadow: 0 0 3px 1px #BBDEFB;
+} .createJob form button {
+    padding: 0.5em 2em;
+    padding-top: 0.7em;
+    margin: 1em 0;
+    width: 100%;
+    outline: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    border: 1px solid #CCC;
+    font-weight: 700;
+    color: #FFF;
+    background: #0D47A1;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.2s ease-in-out;
+} .createJob form button:hover, .createJob form button:focus {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.jobsContainer {
+    margin: 0.2em;
+    display: grid;
+    grid-template-columns: 0.275fr 1fr;
+    grid-gap: 0.2em;
+    grid-template-areas: 'aside offers';
+}
+
+aside {
+    min-width: 20.6em;
+    display: flex;
+    flex-direction: column;
+    grid-area: aside;
+    background: #FFF;
+    overflow-y: auto;
+} aside form {
+    padding: 0 2em;
+    letter-spacing: 0.5px;
+} aside form div {
+    margin: 1em 0;
+    max-height: 250px;
+    overflow-y: auto;
+} aside form h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #212121;
+} aside form input {
+    margin-right: 0.7em;
+    font-size: 1rem;
+    cursor: pointer;
+} aside form label {
+    font-size: 0.87rem;
+    font-weight: 300;
+    cursor: pointer;
+} aside hr {
+    background: #CCC;
+    height: 0.1em;
+    border: none;
+}
+
+.offers {
+    grid-area: offers;
+    background: #FFF;
+} .offers .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+    border-bottom: 0.2em solid #EEE;
+} .offers .bar h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+} .offers .bar button {
+    width: fit-content;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 1rem;
+    color: #010606;
+    transition: all 0.2s ease-in-out;
+} .offers .bar button:hover, .offers .bar button:focus {
+    box-shadow: 0 0 3px 1px #BBDEFB;
+    transition: all 0.2s ease-in-out;
+}.offers .bar button .icon {
+    position: relative;
+    top: 2px;
+    margin-left: 7px;
+} .offersWrapper {
+    padding: 1em;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    text-align: center;  
+    text-align: center;   
 } #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
@@ -32,4 +201,4 @@
     color: yellow;
     background-color: transparent;
     text-decoration: underline;
-}
+} */

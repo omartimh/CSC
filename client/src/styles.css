@@ -10,18 +10,33 @@
   background: #555;
 }
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   font-family: 'Poppins', sans-serif;
-} .container {
-  max-width: 100%;
 } .content {
+  position: relative;
+  top: 70px;
+  margin-bottom: 4.39em;
   width: 100%;
   min-height: 740px;
   background-color: #eee;
+}
+
+.textError
+{
+  color: #f5002d !important;
+} .error {
+  border: 1px solid #f5002d !important;
+} .error::placeholder {
+  color: #f5002d !important;
 }

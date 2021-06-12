@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <div>
-                <p style={{textAlign: "right", color: "#222"}}>Copyright &copy; 2021 MSA University.</p>
+                <p style={{textAlign: "right", color: "#222"}}>CSC &copy; 2021, All Rights Reserved.</p>
                 <br/><hr/><br/>
                 <span>
                     <Link to="/about">About</Link>
