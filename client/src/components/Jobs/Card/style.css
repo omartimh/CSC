@@ -1,0 +1,46 @@
+.offers .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+} .offers .tag {
+    margin: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} .offers .duration {
+    padding: 0.3em 0.5em;
+    text-transform: capitalize;
+    color: #FFF;
+    background: goldenrod;
+    border-radius: 5px;
+} .offers .salary {
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+} .offers h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #010606;
+} .offers .company {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: #00B0FF;
+} .offers p {
+    margin: 1em 0;
+    color: #34495e;
+} .offers .view {
+    align-self: center;
+    margin: 1em 0;
+    width: fit-content;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #3E3E3E;
+} .offers .view .icon {
+    font-size: 1.3rem;
+    position: relative;
+    top: 4px;
+    margin-left: 7px;
+}

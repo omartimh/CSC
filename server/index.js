@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import userRoutes from './routes/users.js';
 import postRoutes from './routes/posts.js';
 import coursesRoutes from './routes/courses.js';
+import jobsRoutes from './routes/jobs.js';
 
 const app = express();
 dotenv.config();
@@ -18,6 +19,7 @@ app.use(cors());
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/courses', coursesRoutes);
+app.use('/jobs', jobsRoutes);
 
 const PORT = process.env.PORT || 5000;
 
