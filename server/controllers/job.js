@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Job from '../models/Job.js';
+import Job from '../models/job.js';
 
 export const getJobs = async (req, res) => {
     try {

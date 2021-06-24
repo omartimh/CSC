@@ -5,7 +5,6 @@ import { IoIosArrowDown } from 'react-icons/io';
 import { AiOutlineForm } from 'react-icons/ai';
 import { CircularProgress } from '@material-ui/core';
 
-import Pagination from '../Pagination/Pagination';
 import Form from './Form/Form';
 import Post from './Post/Post';
 import Button from '../Button/Button';

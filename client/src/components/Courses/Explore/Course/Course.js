@@ -1,8 +1,8 @@
 import './style.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ImClock2 } from 'react-icons/im';
-import { BsFillBookmarksFill, BsAwardFill } from 'react-icons/bs';
+import { BsFillBookmarksFill } from 'react-icons/bs';
 import { IoMdListBox } from 'react-icons/io';
 import { FaGlobe } from 'react-icons/fa';
 import { MdDescription } from 'react-icons/md';

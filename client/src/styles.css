@@ -28,7 +28,8 @@ body {
   top: 70px;
   margin-bottom: 4.39em;
   width: 100%;
-  min-height: 740px;
+  height: fit-content;
+  min-height: 100vh;
   background-color: #eee;
 }
 
